@@ -34,6 +34,7 @@ const APP_SELL_INMUTABLE = [
 
 self.addEventListener("install",e =>{
 
+    console.log("Se instalo correctamente");
     const cacheStatic = caches.open(STATIC_CACHE).then(cache => cache.addAll(APP_SELL));
 
     const cacheInmutable = caches.open(INMUTABLE_CACHE).then(cache => cache.addAll(APP_SELL_INMUTABLE));
@@ -45,6 +46,7 @@ self.addEventListener("install",e =>{
 
 self.addEventListener("activate", e=>{
 
+    console.log("Se activo correctamente");
     const respuesta = caches.keys().then( keys => {
  
         keys.forEach( key => {
